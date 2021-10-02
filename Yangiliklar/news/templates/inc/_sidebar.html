@@ -1,0 +1,15 @@
+{% load news_tags %}
+
+<div class="list-group">
+    <h2> Salom Jaloliddin </h2>
+    <a href="{% url 'home' %}" class="list-group-item list-group-item-action active" aria-current="true">
+        Yangilik kategoriyalari
+    </a>
+    {% get_list_categories as categories %}
+    {% for item in categories %}
+        <a href="{% url 'category' item.pk %}" class="list-group-item list-group-item-action">{{ item.title }}</a>
+    {% endfor %}
+</div>
+
+
+
